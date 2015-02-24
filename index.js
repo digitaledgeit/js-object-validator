@@ -150,7 +150,7 @@ ObjectValidator.prototype = {
       //get the value from a function
       if (rule.type === 'fn') {
         if (typeof(value) === 'function') {
-          value = value();
+          value = value.call(object);
         } else {
           return done(new Error('Expected property "'+property+'" to be a function.'));
         }
