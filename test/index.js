@@ -1,5 +1,5 @@
 var assert = require('assert');
-var ObjectValidator = require('..');
+var ObjectValidator = require.loader === 'component' ? require('object-validator') : require('..');
 
 describe('ObjectValidator', function() {
 
@@ -97,6 +97,17 @@ describe('ObjectValidator', function() {
           assert(!(error instanceof Error));
           assert.equal(valid, false);
           assert.deepEqual(messages, {name: 'Error!'});
+          done();
+        })
+      ;
+    });
+
+    it('should return valid when there are no validators', function(done) {
+      ObjectValidator()
+        .validate({name: 'John'}, function(error, valid, messages) {
+          assert(!(error instanceof Error));
+          assert.equal(valid, true);
+          assert.deepEqual(messages, {});
           done();
         })
       ;

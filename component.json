@@ -2,6 +2,12 @@
   "name": "object-validator",
   "scripts": ["index.js"],
   "dependencies": {
-    "mariocasciaro/object-path": "0.6.0"
+    "mariocasciaro/object-path": "v0.8.1",
+    "digitaledgeit/js-validator-chain": "0.2.0"
+  },
+  "development": {
+    "dependencies": {
+      "component/assert": "*"
+    }
   }
 }
