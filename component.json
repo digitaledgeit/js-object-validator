@@ -1,4 +1,7 @@
 {
   "name": "object-validator",
-  "scripts": ["index.js"]
+  "scripts": ["index.js"],
+  "dependencies": {
+    "mariocasciaro/object-path": "0.6.0"
+  }
 }

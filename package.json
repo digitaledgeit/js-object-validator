@@ -1,0 +1,19 @@
+{
+  "name": "object-validator",
+  "version": "0.1.0",
+  "description": "Validate object properties",
+  "main": "index.js",
+  "dependencies": {
+    "object-path": "^0.9.0",
+    "validator-chain": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/digitaledgeit/js-object-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitaledgeit/js-object-validator/issues"
+  },
+  "homepage": "https://github.com/digitaledgeit/js-object-validator",
+  "license": "MIT"
+}

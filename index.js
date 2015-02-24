@@ -1,4 +1,5 @@
-var ValidatorChain = require('validator-chain');
+var objectPath      = require('object-path');
+var ValidatorChain  = require('validator-chain');
 
 /**
  * An object validator
@@ -17,7 +18,7 @@ function ObjectValidator() {
 ObjectValidator.prototype = {
 
   /**
-   * Get/Set whether an object is optional
+   * Get or set whether an object is optional
    * @param   {bool|function():bool}                  [optional]
    * @returns {bool|ObjectValidator}
    */
@@ -138,7 +139,7 @@ ObjectValidator.prototype = {
       var rule = self._validators[property];
 
       //get the value - even from a getter function
-      var value = object[property];
+      var value = objectPath.get(object, property);
 
       //get the value from a function
       if (rule.type === 'fn') {
