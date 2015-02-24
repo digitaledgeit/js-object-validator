@@ -134,6 +134,12 @@ ObjectValidator.prototype = {
 
     }
 
+    //check if we're finished cause no validators
+    if (properties.length === 0) {
+      callback(null, valid, messages);
+      return this;
+    }
+
     //run each property validation
     properties.forEach(function(property) {
       var rule = self._validators[property];
